@@ -8,7 +8,7 @@ import { ServerService } from './Service/server.service';
 })
 export class AppComponent {
   title = 'ngMVCEtWebAPI';
-
+  data:string = ""
   name:string|null = localStorage.getItem('name');
   result:string = "Result"
   logged:boolean = localStorage.getItem('authToken')==null?false:true;
@@ -34,7 +34,11 @@ export class AppComponent {
 
   logout():void{
     this.service.logout()
-this.logged = false    
-this.result = "Result"
+  this.logged = false    
+  this.result = "Result"
+  }
+
+  async addData():Promise<void>{
+    await this.service.addData(this.data)
   }
 }

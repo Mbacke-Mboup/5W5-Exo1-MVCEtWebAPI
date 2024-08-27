@@ -49,4 +49,12 @@ export class ServerService {
     localStorage.removeItem("name")
 
   }
+
+  async addData(name:string):Promise<void>{
+    let data = {
+      name: name
+    }
+    let x = lastValueFrom(this.http.post<string>(this.url+"TestData/CreateData",data))
+    
+  }
 }
