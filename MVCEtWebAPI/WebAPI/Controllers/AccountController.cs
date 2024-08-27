@@ -93,7 +93,7 @@ namespace WebAPI.Controllers
 
         [HttpGet]
         [Authorize]
-        public ActionResult PrivatecTest()
+        public ActionResult PrivateTest()
         {
             return Ok(new string[] { "PrivatePomme", "PrivatePoire", "PrivateBanane" });
         }

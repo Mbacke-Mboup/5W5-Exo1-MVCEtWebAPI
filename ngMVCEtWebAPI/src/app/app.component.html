@@ -1,0 +1,16 @@
+<input *ngIf="!logged" [(ngModel)]="name" placeholder="name">
+<span *ngIf="logged">Bienvenue <strong>{{name}}</strong></span>
+<br>
+<div *ngIf="logged">
+  <button (click)="logout()">Logout</button>
+</div>
+<div *ngIf="!logged">
+  <button (click)="enregistrer()">Enregistrer</button>
+  <button (click)="connexion()">Connexion</button>
+</div>
+
+<br><br><br>
+<button (click)="publique()">Tester Publique</button>
+<button (click)="private()">Tester Privé</button>
+<p>{{result}}</p>
+
